@@ -1,9 +1,10 @@
-const express = require("express")
+const express = require("express");
 const connectDB = require("./config/db");
 const cors = require("cors");
+const students = require("./routes/api/students");
 
 // Connecting to MongoDB
-connectDB();
+// connectDB();
 
 // Initiating the app
 const app = express();
@@ -12,6 +13,8 @@ const app = express();
 app.use(cors());
 // Handle JSON parsing properly
 app.use(express.json());
+// Use the API group instead of multiple paths for multiple routes
+app.use("/api/students",students);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
