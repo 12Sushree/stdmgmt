@@ -12,7 +12,9 @@ const app = express();
 // Enabling CORS here for safety of access of info from other domains
 app.use(cors());
 // Handle JSON parsing properly
-app.use(express.json());
+app.use(express.json({
+    extended: false
+}));
 // Use the API group instead of multiple paths for multiple routes
 app.use("/api/students",students);
 
