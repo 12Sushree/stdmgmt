@@ -1,0 +1,38 @@
+- add package.json
+- install few neccessary pkgs
+    -dotenv, body-parser, mongoose, express, nodemon
+-create a basic server
+    -env file creation
+        -declare port
+        -call the port from env file
+    -add a notes file in .gitignore
+    -add custom command in package.json
+    -print the system variable in console
+    -initiate the server and open the port
+-create config directory
+    -db connectivity file
+    -basic blueprint of a file(import, component, export module)
+    -try catch
+    -async await
+    -import local modules
+    -install and implement cors
+    -implemented json
+-create models directory
+    -create Student.js file
+    -create model for mongodb student
+    -add few data types in the json object -> String, Number, Date
+-add a new route
+    -all students route
+    -basic skeleton
+        -CRUD method
+        -Mongo function call
+        -show in front end correct output
+        -respond with a json and 404 output
+            -if successful show a dummy output on the respective path/route
+    -read operation for student model using get method
+-add all routes
+    -read
+    -search
+    -create
+    -update
+    -delete
