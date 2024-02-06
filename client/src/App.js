@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       <div>
         <Routes>
-          <Route exact path='/' element={<ShowStudentList />} />
+          <Route path='/student-list' element={<ShowStudentList />} />
           <Route path='/add-student' element={<AddStudent />} />
           <Route path='/edit-student-info' element={<UpdateStudentInfo />} />
           <Route path='/show-student/:id' element={<ShowStudentDetails />} />

@@ -1,16 +1,20 @@
-import React, { useState } from 'React';
-import { Link } from 'react-outer-dom';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
+// import axios from 'axios';
+
+// import { useNavigate } from 'react-router-dom';
 
 const AddStudent = () => {
-    return (
-        <div className='AddStudent'>
-            <div className='container'>
-                <h1>This is Add Student Page.</h1>
-            </div>
+  // Define the state with useState hook
+  return (
+    <div className='AddStudent'>
+      <div className='container'>
+        <div className='row'>
+         <h1>Add Student Page</h1>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default AddStudent;

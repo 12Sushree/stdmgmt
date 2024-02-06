@@ -1,16 +1,18 @@
-import React, { useState } from 'React';
-import { Link } from 'react-outer-dom';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import React, { useState, useEffect } from 'react';
+// import { Link, useParams, useNavigate } from 'react-router-dom';
+// import '../App.css';
+// import axios from 'axios';
 
-const ShowStudentDetails = () => {
-    return (
-        <div className='ShowStudentDetails'>
-            <div className='container'>
-                <h1>This is Show Student Details Page.</h1>
-            </div>
+function ShowStudentDetails(props) {
+  return (
+    <div className='ShowBookDetails'>
+      <div className='container'>
+        <div className='row'>
+          <h1>This is Student Detail Page</h1>
         </div>
-    );
-};
+      </div>
+    </div>
+  );
+}
 
 export default ShowStudentDetails;
