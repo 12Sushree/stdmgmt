@@ -14,6 +14,22 @@ The faculty can view the details of the students.
 
 ## How to run your instance
 
+- To run this project one have to install some packages
+  - mongoose
+  - body-parser
+  - express
+  - nodemon
+  - axios
+  - cors
+  - dotenv
+  - react
+  - react-router-dom
+
+- To install these packages use following command
+```bash
+npm install 'package-name'
+```
+
 ## How does it work
 
 ## References
