@@ -1,6 +1,8 @@
 - add package.json
+
 - install few neccessary pkgs
     -dotenv, body-parser, mongoose, express, nodemon
+
 -create a basic server
     -env file creation
         -declare port
@@ -9,6 +11,7 @@
     -add custom command in package.json
     -print the system variable in console
     -initiate the server and open the port
+
 -create config directory
     -db connectivity file
     -basic blueprint of a file(import, component, export module)
@@ -17,10 +20,12 @@
     -import local modules
     -install and implement cors
     -implemented json
+
 -create models directory
     -create Student.js file
     -create model for mongodb student
     -add few data types in the json object -> String, Number, Date
+
 -add a new route
     -all students route
     -basic skeleton
@@ -30,9 +35,13 @@
         -respond with a json and 404 output
             -if successful show a dummy output on the respective path/route
     -read operation for student model using get method
+
 -add all routes
     -read
     -search
     -create
     -update
     -delete
+
+-add the create student component
+    -add axios logic

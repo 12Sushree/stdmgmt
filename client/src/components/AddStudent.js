@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { useNavigate } from 'react-router-dom';
+import NavBar from './NavBar';
+import Footer from './Footer';
 
 const AddStudent = () => {
 
@@ -25,6 +27,7 @@ const AddStudent = () => {
 
   return (
     <div className='AddStudent'>
+      <NavBar />
       <div className='container'>
         <div className='row'>
           <div className='col-md-8 m-auto'>
@@ -60,11 +63,33 @@ const AddStudent = () => {
                   // onChange={onChange}
                 />
               </div>
+
+              <div className='form-group'>
+                <input
+                  type='text'
+                  placeholder='Honors of the Student'
+                  name='hons'
+                  className='form-control'
+                  // value={Student.Name}
+                  // onChange={onChange}
+                />
+              </div>
+
+              <div className='form-group'>
+                <input
+                  type='number'
+                  placeholder='Year of the Student'
+                  name='yr'
+                  className='form-control'
+                  // value={Student.Name}
+                  // onChange={onChange}
+                />
+              </div>
             </form>
           </div>
-
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

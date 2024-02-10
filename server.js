@@ -2,6 +2,7 @@ const express = require("express");
 const connectDB = require("./config/db");
 const cors = require("cors");
 const students = require("./routes/api/students");
+const path = require('path');
 
 // Connecting to MongoDB
 // connectDB();
@@ -18,7 +19,19 @@ app.use(express.json({
 // Use the API group instead of multiple paths for multiple routes
 app.use("/api/students",students);
 
+// Serve static files along with the API on the same port
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", function (_, res) {
+    res.sendFile(
+        path.join(__dirname, "./client/build/index.html"),
+        function (err) {
+            res.status(500).send(err);
+        }
+    );
+});
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 });
+
