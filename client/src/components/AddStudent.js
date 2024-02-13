@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar';
 import Footer from './Footer';
 
-const AddStudent = () => {
+const AddStudent = (props) => {
 
   const navigate = useNavigate();
   const [student, setStudent] = useState({
@@ -17,7 +17,7 @@ const AddStudent = () => {
     Honors: '',
     Year: '',
     DOB: '',
-    PhnNo: '',
+    PhnNo: ''
   });
   const [showToast, setShowToast] = useState(false);
 
@@ -41,7 +41,7 @@ const AddStudent = () => {
         })
 
       // Show the success alert
-      toast.success('Sudent added successfully!', {
+      toast.success('Student added successfully!', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -100,7 +100,7 @@ const AddStudent = () => {
         <div className='row'>
           <div className='col-md-8 m-auto'>
             <br />
-            <Link to='/student-list' className='btn btn-outline-warning float-left'>
+            <Link to='/student-list' className='btn btn-outline-info float-left'>
               Show Student List
             </Link>
           </div>
@@ -120,17 +120,19 @@ const AddStudent = () => {
                   onChange={onChange}
                 />
               </div>
+              <br />
 
               <div className='form-group'>
                 <input
-                  type='text'
+                  type='number'
                   placeholder='Id of the Student'
                   name='id'
                   className='form-control'
-                  value={student.Name}
+                  value={student.Id}
                   onChange={onChange}
                 />
               </div>
+              <br />
 
               <div className='form-group'>
                 <input
@@ -138,10 +140,11 @@ const AddStudent = () => {
                   placeholder='Honors of the Student'
                   name='hons'
                   className='form-control'
-                  value={student.Name}
+                  value={student.Honors}
                   onChange={onChange}
                 />
               </div>
+              <br />
 
               <div className='form-group'>
                 <input
@@ -149,21 +152,23 @@ const AddStudent = () => {
                   placeholder='Year of the Student'
                   name='yr'
                   className='form-control'
-                  value={student.Name}
+                  value={student.Year}
                   onChange={onChange}
                 />
               </div>
+              <br />
 
               <div className='form-group'>
                 <input
-                  type='number'
+                  type='date'
                   placeholder='DOB of the Student'
                   name='dob'
                   className='form-control'
-                  value={student.Name}
+                  value={student.DOB}
                   onChange={onChange}
                 />
               </div>
+              <br />
 
               <div className='form-group'>
                 <input
@@ -171,11 +176,15 @@ const AddStudent = () => {
                   placeholder='Phone No. of the Student'
                   name='phn'
                   className='form-control'
-                  value={student.Name}
+                  value={student.PhnNo}
                   onChange={onChange}
                 />
               </div>
-
+  
+              <input
+                type='submit'
+                className='btn btn-outline-info btn-block mt-4'
+              />
             </form>
           </div>
         </div>

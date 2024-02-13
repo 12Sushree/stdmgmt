@@ -3,9 +3,9 @@ const connectDB = require("./config/db");
 const cors = require("cors");
 const students = require("./routes/api/students");
 const path = require('path');
-
+require('dotenv').config({ path: "./.env" })
 // Connecting to MongoDB
-// connectDB();
+connectDB();
 
 // Initiating the app
 const app = express();
