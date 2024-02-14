@@ -1,26 +1,26 @@
 const mongoose = require("mongoose")
 
 const StudentSchema = new mongoose.Schema({
-    Name: {
+    name: {
         type: String,
         required: true
     },
-    ID: {
+    id: {
         type: Number,
         required: true
     },
-    Honors: {
+    honors: {
         type: String,
         required: true
     },
-    Year: {
-        type: String,
+    join_year: {
+        type: Number,
         required: true
     },
-    DOB: {
+    dob: {
         type: Date
     },
-    PhnNo: {
+    phno: {
         type: Number,
         required: true
     }

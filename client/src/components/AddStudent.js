@@ -12,12 +12,12 @@ const AddStudent = (props) => {
 
   const navigate = useNavigate();
   const [student, setStudent] = useState({
-    Name: '',
-    Id: '',
-    Honors: '',
-    Year: '',
-    DOB: '',
-    PhnNo: ''
+    name: '',
+    id: '',
+    honors: '',
+    join_year: '',
+    dob: '',
+    phno: '',
   });
   const [showToast, setShowToast] = useState(false);
 
@@ -32,12 +32,12 @@ const AddStudent = (props) => {
     axios.post('api/students',student)
       .then((res) => {
         setStudent({
-          Name: '',
-          ID: '',
-          Honors: '',
-          Year: '',
-          DOB: '',
-          PhnNo: ''
+          name: '',
+          id: '',
+          honors: '',
+          join_year: '',
+          dob: '',
+          phno: '',
         })
 
       // Show the success alert
@@ -62,7 +62,7 @@ const AddStudent = (props) => {
       })
 
       .catch((err) => {
-        console.log('Error in AddStudent!');
+        console.log('Error in Adding Student!');
         console.log('The error is -> ')
         console.log(err)
         // Show the success alert
@@ -116,7 +116,7 @@ const AddStudent = (props) => {
                   placeholder='Name of the Student'
                   name='name'
                   className='form-control'
-                  value={student.Name}
+                  value={student.name}
                   onChange={onChange}
                 />
               </div>
@@ -128,7 +128,7 @@ const AddStudent = (props) => {
                   placeholder='Id of the Student'
                   name='id'
                   className='form-control'
-                  value={student.Id}
+                  value={student.id}
                   onChange={onChange}
                 />
               </div>
@@ -138,9 +138,9 @@ const AddStudent = (props) => {
                 <input
                   type='text'
                   placeholder='Honors of the Student'
-                  name='hons'
+                  name='honors'
                   className='form-control'
-                  value={student.Honors}
+                  value={student.honors}
                   onChange={onChange}
                 />
               </div>
@@ -149,10 +149,10 @@ const AddStudent = (props) => {
               <div className='form-group'>
                 <input
                   type='number'
-                  placeholder='Year of the Student'
-                  name='yr'
+                  placeholder='Joining Year of the Student'
+                  name='join_year'
                   className='form-control'
-                  value={student.Year}
+                  value={student.join_year}
                   onChange={onChange}
                 />
               </div>
@@ -164,7 +164,7 @@ const AddStudent = (props) => {
                   placeholder='DOB of the Student'
                   name='dob'
                   className='form-control'
-                  value={student.DOB}
+                  value={student.dob}
                   onChange={onChange}
                 />
               </div>
@@ -174,9 +174,9 @@ const AddStudent = (props) => {
                 <input
                   type='number'
                   placeholder='Phone No. of the Student'
-                  name='phn'
+                  name='phno'
                   className='form-control'
-                  value={student.PhnNo}
+                  value={student.phno}
                   onChange={onChange}
                 />
               </div>
@@ -189,6 +189,8 @@ const AddStudent = (props) => {
           </div>
         </div>
       </div>
+      <br />
+      
       <Footer />
     </div>
   );
