@@ -100,7 +100,7 @@ const AddStudent = (props) => {
         <div className='row'>
           <div className='col-md-8 m-auto'>
             <br />
-            <Link to='/student-list' className='btn btn-outline-info float-left'>
+            <Link to='/student-list' className='btn btn-outline-primary float-left'>
               Show Student List
             </Link>
           </div>
@@ -183,7 +183,7 @@ const AddStudent = (props) => {
   
               <input
                 type='submit'
-                className='btn btn-outline-info btn-block mt-4'
+                className='btn btn-outline-primary btn-block mt-4'
               />
             </form>
           </div>

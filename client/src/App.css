@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #31023d;
+  background-color: #250038;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,35 @@
   color: #61dafb;
 }
 
+.Home{
+  background-image: url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3R1ZGVudCUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D);
+  min-height: 100vh;
+  color: black;
+  background-size: cover;
+}
+
+.web-desc{
+  height: auto;
+  justify-self: center;
+  display: block;
+  background-color: rgba(245, 238, 238, 0.7);
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+.heading{
+  color:#421e86;
+  font-weight: bold;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,26 +66,36 @@
   }
 }
 
+.nav{
+  background-color: #326efa;
+  font-weight: bold;
+}
+
+.foot{
+  background-color: #326efa;
+  font-weight: bold;
+}
+
 .AddStudent {
-  background-color: rgb(0, 0, 0);
+  background-color: #250038;
   min-height: 100vh;
   color: beige;
 }
 
 .ShowStudentDetails {
-  background-color: black;
+  background-color: #250038;
   min-height: 100vh;
   color: beige;
 }
 
 .UpdateStudentInfo {
-  background-color: black;
+  background-color: #250038;
   min-height: 100vh;
   color: beige;
 }
 
 .ShowStudentList {
-  background-color: black;
+  background-color: #250038;
   height: 100%;
   width: 100%;
   min-height: 100vh;
@@ -84,22 +123,12 @@
 
 
 .desc {
-  height: 130px;
+  height: 150px;
   padding: 10px;
+  background-color: #2b46a5;
+  color: white;
 }
 
-.desc h2 {
-  font-size: 1em;
-  font-weight: 400;
-}
-
-
-.desc h3, p {
-  font-weight: 300;
-}
-
-.desc h3  {
-  color: #6c757d;
-  font-size: 1em;
-  padding: 10px 0 10px 0;
+.desc h2,h3,h4{
+  font-size:20px;
 }

@@ -41,7 +41,7 @@ function ShowStudentList() {
           <div className='col-md-11'>
             <Link
               to='/add-student'
-              className='btn btn-outline-info float-right'
+              className='btn btn-outline-primary float-right'
             >
               + Add New Student
             </Link>
@@ -53,6 +53,7 @@ function ShowStudentList() {
 
         <div className='list'>{studentList}</div>
       </div>
+      <br />
 
       <Footer />
     </div>
