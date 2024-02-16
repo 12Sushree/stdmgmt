@@ -67,13 +67,17 @@
 }
 
 .nav{
-  background-color: #5083fa;
+  background-color: #b1c6f6;
   font-weight: bold;
 }
 
 .foot{
-  background-color: #5083fa;
+  background-color: #b1c6f6;
   font-weight: bold;
+}
+
+.logo{
+  margin: 5px;
 }
 
 .AddStudent {
