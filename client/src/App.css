@@ -67,12 +67,12 @@
 }
 
 .nav{
-  background-color: #326efa;
+  background-color: #5083fa;
   font-weight: bold;
 }
 
 .foot{
-  background-color: #326efa;
+  background-color: #5083fa;
   font-weight: bold;
 }
 
@@ -114,8 +114,8 @@
 
 
 .card-container {
-  width: 250px;
-  border: 1px solid rgb(165, 165, 165);
+  width: 200px;
+  border: 1px solid rgb(228, 226, 226);
   margin: 0 auto;
   border-radius: 5px;
   overflow: hidden;
