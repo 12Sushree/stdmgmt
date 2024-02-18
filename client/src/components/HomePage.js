@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import '../App.css'
 import NavBar from './NavBar';
-import Footer from './Footer';
 
 const Home = (props) => {
   return (

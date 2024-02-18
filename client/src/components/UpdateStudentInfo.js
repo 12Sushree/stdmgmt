@@ -4,6 +4,8 @@ import axios from 'axios';
 import '../App.css';
 import NavBar from './NavBar';
 import Footer from './Footer';
+import { Slide, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function UpdateStudentInfo(props) {
     const [student, setStudent] = useState({
@@ -14,6 +16,7 @@ function UpdateStudentInfo(props) {
         dob: '',
         phno: '',
     });
+    const [showToast, setShowToast] = useState(false);
 
     const { id } = useParams();
     const navigate = useNavigate();
@@ -57,17 +60,60 @@ function UpdateStudentInfo(props) {
             .put(`/api/students/${id}`, data)
             .then((res) => {
                 navigate(`/show-student/${id}`);
+                // Show the success alert
+                toast.success('Student updated successfully!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Slide,
+                });
+
+                // Delay the navigation slightly to allow the toast to be seen
+                setTimeout(() => {
+                    setShowToast(false); // Hide the toast
+                    navigate('/'); // Navigate to homepage
+                }, 5000); // Adjust the timeout as needed
+
             })
             .catch((err) => {
                 console.log('Error in UpdateStudentInfo PUT request ->');
                 console.log(err)
+                // Show the success alert
+                toast.error('Something went wrong, try again!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Slide,
+                });
             });
     };
 
     return (
         <div className='UpdateStudentInfo'>
             <NavBar />
-
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition={Slide}
+            />
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-8 m-auto'>
