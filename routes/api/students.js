@@ -56,7 +56,7 @@ router.put('/:id', (req, res) => {
 // @access Public
 // READ, DELETE & SEARCH operation
 router.delete('/:id', (req, res) => {
-    Student.findByIdAndRemove(req.params.id, req.body)
+    Student.findByIdAndDelete(req.params.id, req.body)
       .then((student) => res.json({ mgs: 'Student entry deleted successfully' }))
       .catch((err) => res.status(404).json({ error: 'No such a student' }));
 });
