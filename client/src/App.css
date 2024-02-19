@@ -34,6 +34,12 @@ body{
   font-style: normal;
 }
 
+.AllRoutes{
+  min-height: 100vh;
+  color: beige;
+  background-color: #250038;
+}
+
 .Home{
   min-height: 100vh;
   color: black;
@@ -66,22 +72,7 @@ body{
 .Feature{
   min-height: 100vh;
   color: black;
-  animation: colors 5s ease infinite;
-}
-
-@keyframes colors {
-  0%   { 
-    background: rgb(31, 0, 65);
-    background-size: cover;
-  }
-  50%  { 
-    background: rgb(63, 1, 63);
-    background-size: cover;
-  }
-  100%  { 
-    background: rgb(103, 1, 62);
-    background-size: cover;
-  }
+  background-color: #250038;
 }
 
 .web-desc{

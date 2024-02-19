@@ -3,8 +3,8 @@ import React from 'react'
 const NavBar = () => (
   <nav class="navbar navbar-expand-lg navbar-light text-dark h-auto nav">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <i class="fas fa-graduation-cap" style={{ fontSize: '25px' }} ></i> Student Management
+      <a class="navbar-brand" href="/">
+        <i class="fas fa-graduation-cap" style={{ fontSize: '25px' }} ></i> Student Management System
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -18,8 +18,13 @@ const NavBar = () => (
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/student-list">
-              <i class='fas fa-user-graduate'></i> Students 
+            <a class="nav-link" href="/routes">
+              <i class="fas fa-route"></i> Routes 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://drive.google.com/file/d/1zjWhGPEhueW7B2enQ_wADj5xhrRxBMKr/view" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-file"></i> Document 
             </a>
           </li>
           <li class="nav-item">

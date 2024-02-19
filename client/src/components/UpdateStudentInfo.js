@@ -76,7 +76,7 @@ function UpdateStudentInfo(props) {
                 // Delay the navigation slightly to allow the toast to be seen
                 setTimeout(() => {
                     setShowToast(false); // Hide the toast
-                    navigate('/'); // Navigate to homepage
+                    navigate('/student-list'); // Navigate to homepage
                 }, 5000); // Adjust the timeout as needed
 
             })

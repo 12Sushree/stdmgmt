@@ -8,6 +8,7 @@ import ShowStudentDetails from './components/ShowStudentDetails'
 import UpdateStudentInfo from './components/UpdateStudentInfo'
 import Home from './components/HomePage'
 import Feature from './components/Features'
+import AllRoutes from './components/Routes'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/edit-student/:id' element={<UpdateStudentInfo />} />
           <Route path='/show-student/:id' element={<ShowStudentDetails />} />
           <Route path='/features' element={<Feature />} />
+          <Route path='/routes' element={<AllRoutes />} />
         </Routes>
       </div>
     </Router>
