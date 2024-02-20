@@ -1,7 +1,7 @@
 import React from 'react'
 
 const NavBar = () => (
-  <nav class="navbar navbar-expand-lg navbar-light text-dark h-auto nav">
+  <nav class="navbar navbar-expand-lg h-auto nav">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <i class="fas fa-graduation-cap" style={{ fontSize: '25px' }} ></i> Student Management System

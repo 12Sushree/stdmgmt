@@ -136,7 +136,7 @@ function UpdateStudentInfo(props) {
                                 type='text'
                                 placeholder='Name of the Student'
                                 name='name'
-                                className='form-control'
+                                className='form-control ip'
                                 value={student.name}
                                 onChange={onChange}
                             />
@@ -149,7 +149,7 @@ function UpdateStudentInfo(props) {
                                 type='number'
                                 placeholder='Id of the Student'
                                 name='id'
-                                className='form-control'
+                                className='form-control ip'
                                 value={student.id}
                                 onChange={onChange}
                             />
@@ -162,7 +162,7 @@ function UpdateStudentInfo(props) {
                                 type='text'
                                 placeholder='Honors'
                                 name='honors'
-                                className='form-control'
+                                className='form-control ip'
                                 value={student.honors}
                                 onChange={onChange}
                             />
@@ -175,7 +175,7 @@ function UpdateStudentInfo(props) {
                                 type='number'
                                 placeholder='Joining Year of the Student'
                                 name='join_year'
-                                className='form-control'
+                                className='form-control ip'
                                 value={student.join_year}
                                 onChange={onChange}
                             />
@@ -188,7 +188,7 @@ function UpdateStudentInfo(props) {
                                 type='date'
                                 placeholder='Date of Birth'
                                 name='dob'
-                                className='form-control'
+                                className='form-control ip'
                                 value={student.dob}
                                 onChange={onChange}
                             />
@@ -201,7 +201,7 @@ function UpdateStudentInfo(props) {
                                 type='number'
                                 placeholder='Phone No.'
                                 name='phno'
-                                className='form-control'
+                                className='form-control ip'
                                 value={student.phno}
                                 onChange={onChange}
                             />

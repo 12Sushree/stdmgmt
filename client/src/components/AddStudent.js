@@ -115,7 +115,7 @@ const AddStudent = (props) => {
                   type='text'
                   placeholder='Name of the Student'
                   name='name'
-                  className='form-control'
+                  className='form-control ip'
                   value={student.name}
                   onChange={onChange}
                 />
@@ -127,7 +127,7 @@ const AddStudent = (props) => {
                   type='number'
                   placeholder='Id of the Student'
                   name='id'
-                  className='form-control'
+                  className='form-control ip'
                   value={student.id}
                   onChange={onChange}
                 />
@@ -139,7 +139,7 @@ const AddStudent = (props) => {
                   type='text'
                   placeholder='Honors of the Student'
                   name='honors'
-                  className='form-control'
+                  className='form-control ip'
                   value={student.honors}
                   onChange={onChange}
                 />
@@ -151,7 +151,7 @@ const AddStudent = (props) => {
                   type='number'
                   placeholder='Joining Year of the Student'
                   name='join_year'
-                  className='form-control'
+                  className='form-control ip'
                   value={student.join_year}
                   onChange={onChange}
                 />
@@ -163,7 +163,7 @@ const AddStudent = (props) => {
                   type='date'
                   placeholder='DOB of the Student'
                   name='dob'
-                  className='form-control'
+                  className='form-control ip'
                   value={student.dob}
                   onChange={onChange}
                 />
@@ -175,7 +175,7 @@ const AddStudent = (props) => {
                   type='number'
                   placeholder='Phone No. of the Student'
                   name='phno'
-                  className='form-control'
+                  className='form-control ip'
                   value={student.phno}
                   onChange={onChange}
                 />

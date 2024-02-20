@@ -43,23 +43,15 @@ body{
 .Home{
   min-height: 100vh;
   color: black;
-  animation: bg 20s ease infinite;
+  animation: bg 10s ease infinite;
 }
 
 @keyframes bg {
   0%   { 
-    background: url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3R1ZGVudCUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D); 
-    background-size: cover;
-  }
-  25%  { 
-    background: url(https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWR1Y2F0aW9ufGVufDB8fDB8fHww); 
+    background: url(https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZWR1Y2F0aW9ufGVufDB8fDB8fHww); 
     background-size: cover;
   }
   50%  { 
-    background: url(https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGVkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D); 
-    background-size: cover;
-  }
-  75%  { 
     background: url(https://images.unsplash.com/photo-1503676382389-4809596d5290?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHN0dWRlbnR8ZW58MHx8MHx8fDA%3D); 
     background-size: cover;
   }
@@ -97,12 +89,14 @@ body{
   color: white;
   .heading{
     color:#b58efe;
+    text-shadow: 3px 3px 5px #5b02af;
   }
 }
 
 .heading{
   color:#421e86;
   font-weight: bold;
+  text-shadow: 3px 3px 5px #5803ad;
 }
 
 @keyframes App-logo-spin {
@@ -115,8 +109,17 @@ body{
 }
 
 .nav{
-  background-color: #b1c6f6;
+  background-color: transparent;
   font-weight: bold;
+  box-shadow: 0 10px 5px -2px rgba(11, 11, 11, 0.2);
+}
+
+.nav a{
+  color: white;
+}
+
+.menu a{
+  color: white;
 }
 
 .foot{
@@ -186,6 +189,9 @@ body{
 }
 
 .menu a:hover{
-  background-color: rgb(2, 2, 60);
-  color: rgb(246, 227, 227);
+  background-color: rgb(3, 3, 252);
+}
+
+.nav a:hover{
+  color: white;
 }
