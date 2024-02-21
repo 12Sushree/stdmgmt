@@ -28,6 +28,11 @@ const NavBar = () => (
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/tech">
+              <i class="fas fa-tech"></i> Technology 
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/features">
               <i class="fas fa-list"></i> Features 
             </a>
