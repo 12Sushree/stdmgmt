@@ -29,7 +29,7 @@ const NavBar = () => (
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/tech">
-              <i class="fas fa-tech"></i> Technology 
+              <i class="fas fa-microchip"></i> Technology 
             </a>
           </li>
           <li class="nav-item">
@@ -38,7 +38,7 @@ const NavBar = () => (
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">
+            <a class="nav-link" href="/abt">
               <i class="fas fa-info"></i> About 
             </a>
           </li>

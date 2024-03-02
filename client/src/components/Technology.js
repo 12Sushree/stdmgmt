@@ -5,7 +5,7 @@ import Footer from './Footer';
 const Tech = () =>(
     <div className='AllRoutes'>
         <NavBar />
-        <div className='container'>
+        <div className='container-fluid'>
             <h1 className='display-4'>Technologies used in this application</h1>
             <ul>
                 <li>React</li>

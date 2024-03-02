@@ -10,6 +10,7 @@ import Home from './components/HomePage'
 import Feature from './components/Features'
 import AllRoutes from './components/Routes'
 import Tech from './components/Technology'
+import About from './components/About'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/features' element={<Feature />} />
           <Route path='/routes' element={<AllRoutes />} />
           <Route path='/tech' element={<Tech />} />
+          <Route path='/abt' element={<About />} />
         </Routes>
       </div>
     </Router>

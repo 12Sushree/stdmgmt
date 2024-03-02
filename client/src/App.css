@@ -63,28 +63,36 @@ body{
 
 .Feature{
   min-height: 100vh;
-  color: black;
+  color: white;
   background-color: #250038;
 }
 
-.web-desc{
-  height: auto;
-  justify-self: center;
-  display: block;
+.About{
+  min-height: 100vh;
+  color: white;
+  background-color: #250038;
+}
+
+.txt{
+  margin-top: 18%;
   background-color: rgba(245, 238, 238, 0.7);
   color: black;
+  height: 200px;
+}
+
+.web-desc{
+  height: 700px;
+  justify-self: center;
+  display: block;
   font-weight: bold;
-  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
   width: 80%;
   padding: 20px;
   text-align: center;
 }
 
-.web-desc:hover{
+.txt:hover{
   background-color: rgba(96, 94, 94, 0.7);
   color: white;
   .heading{
@@ -170,18 +178,19 @@ body{
 
 .card-container {
   width: 200px;
-  border: 1px solid rgb(228, 226, 226);
+  border: 1px solid transparent;
   margin: 0 auto;
   border-radius: 5px;
   overflow: hidden;
+  position: relative;
 }
 
-
 .desc {
-  height: 150px;
+  height: auto;
   padding: 10px;
   background-color: #2b46a5;
   color: white;
+  width: 200px;
 }
 
 .desc h2,h3,h4{

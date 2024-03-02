@@ -86,7 +86,7 @@ function ShowStudentDetails(props) {
                 transition={Slide}
             />
 
-            <div className='container'>
+            <div className='container-fluid'>
                 <div className='row justify-content-center'>
                     <div className='col-md-8'>
                         <h1 className='display-4 text-center'>Student's Record</h1>

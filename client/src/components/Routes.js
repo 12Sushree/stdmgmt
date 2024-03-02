@@ -5,7 +5,7 @@ import Footer from './Footer';
 const AllRoutes = () =>(
     <div className='AllRoutes'>
         <NavBar />
-        <div className='container'>
+        <div className='container-fluid'>
             <h3 className='display-4'>Backend Routes</h3>
             <ul>
                 <li>Create: api/student/ </li>

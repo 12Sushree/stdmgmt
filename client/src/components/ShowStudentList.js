@@ -31,7 +31,7 @@ function ShowStudentList() {
     <div className='ShowStudentList'>
       <NavBar />
 
-      <div className='container'>
+      <div className='container-fluid'>
         <div className='row'>
           <div className='col-md-12'>
             <br />

@@ -10,9 +10,10 @@ const StudentCard = (props) => {
   return (
     <div className='card-container'>
       <img
-        src='https://img.freepik.com/premium-photo/teenager-student-girl-yellow-pointing-finger-side_1368-40175.jpg?size=626&ext=jpg&ga=GA1.1.87170709.1707868800&semt=sph'
+        src='https://images.unsplash.com/photo-1592188657297-c6473609e988?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3R1ZGVudHxlbnwwfHwwfHx8MA%3D%3D'
         alt='Students'
         height={200}
+        width={200}
       />
       <div className='desc'>
         <h2>
