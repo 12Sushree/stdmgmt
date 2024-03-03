@@ -185,12 +185,21 @@ body{
   position: relative;
 }
 
+.card-container1 {
+  width: 400px;
+  border: 1px solid transparent;
+  margin: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
 .desc {
   height: auto;
   padding: 10px;
   background-color: #2b46a5;
   color: white;
-  width: 200px;
+  width: 400px;
 }
 
 .desc h2,h3,h4{
