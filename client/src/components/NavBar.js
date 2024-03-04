@@ -23,7 +23,7 @@ const NavBar = () => (
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://drive.google.com/file/d/1zjWhGPEhueW7B2enQ_wADj5xhrRxBMKr/view" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link" href="https://drive.google.com/file/d/1rlS8tkrEaTDzPLkM2MYmZbL-KTWcAAj2/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-file"></i> Document 
             </a>
           </li>
