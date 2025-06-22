@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
 import axios from 'axios';
 import Footer from './Footer';
-import NavBar from './NavBar';
 
-function ShowStudentDetails(props) {
+function ShowStudentDetails() {
     const [student, setStudent] = useState({});
-    const [showToast, setShowToast] = useState(false);
-
-    const { id } = useParams();
+    const { id } = useParams(); // Use 'id' to match your route
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -20,20 +17,17 @@ function ShowStudentDetails(props) {
             .then((res) => {
                 setStudent(res.data);
             })
-            .catch((err) => {
-                console.log('Error from ShowStudentDetails');
+            .catch((_err) => {
+                toast.error('Error fetching student details');
             });
     }, [id]);
 
-    const onDeleteClick = (id) => {
+    const onDeleteClick = () => {
         axios
             .delete(`/api/students/${id}`)
-            .then((res) => {
-
-                // Show the success alert
+            .then((_res) => {
                 toast.success('Student Details deleted!', {
-                    position: "top-right",
-                    autoClose: 5000,
+                    autoClose: 2000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -42,19 +36,11 @@ function ShowStudentDetails(props) {
                     theme: "dark",
                     transition: Slide,
                 });
-
-                // Delay the navigation slightly to allow the toast to be seen
                 setTimeout(() => {
-                    // setShowToast(false); // Hide the toast
-                    navigate('/student-list'); // Navigate to homepage
-                }, 5000); // Adjust the timeout as needed
+                    navigate('/student-list');
+                }, 2000);
             })
-
-            .catch((err) => {
-                console.log('Error in DeleteStudent!');
-                console.log('The error is -> ')
-                console.log(err)
-                // Show the success alert
+            .catch((_err) => {
                 toast.error('Error while deleting the student, please try again!', {
                     position: "top-right",
                     autoClose: 5000,
@@ -69,9 +55,15 @@ function ShowStudentDetails(props) {
             });
     };
 
+    // Format date of birth
+    const formatDate = (dateStr) => {
+        if (!dateStr) return '';
+        const date = new Date(dateStr);
+        return date.toLocaleDateString();
+    };
+
     return (
         <div className='ShowStudentDetails'>
-            <NavBar />
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -95,10 +87,10 @@ function ShowStudentDetails(props) {
 
                         <div className='row justify-content-center'>
                             <div className='col-md-12'>
-                                <table className='table table-striped table-bordered table-dark'>
+                                <table className='table table-striped table-bordered table-light'>
                                     <tbody>
                                         <tr>
-                                            <th scope='row'>Id</th>
+                                            <th scope='row'>Student ID</th>
                                             <td>{student.id}</td>
                                         </tr>
                                         <tr>
@@ -115,7 +107,7 @@ function ShowStudentDetails(props) {
                                         </tr>
                                         <tr>
                                             <th scope='row'>Date of Birth</th>
-                                            <td>{student.dob}</td>
+                                            <td>{formatDate(student.dob)}</td>
                                         </tr>
                                         <tr>
                                             <th scope='row'>Phone No.</th>
@@ -131,18 +123,15 @@ function ShowStudentDetails(props) {
                                 <button
                                     type='button'
                                     className='btn btn-outline-danger btn-lg btn-block'
-                                    onClick={() => {
-                                        onDeleteClick(student._id);
-                                    }}
+                                    onClick={onDeleteClick}
                                 >
                                     Delete Student
                                 </button>
                             </div>
 
-
                             <div className='col-md-4'>
                                 <Link
-                                    to={`/edit-student/${student._id}`}
+                                    to={`/edit-student/${id}`}
                                     className='btn btn-outline-warning btn-lg btn-block'
                                 >
                                     Edit Student
@@ -154,7 +143,6 @@ function ShowStudentDetails(props) {
                                     Show Student List
                                 </Link>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -162,8 +150,7 @@ function ShowStudentDetails(props) {
 
             <Footer />
         </div>
-    )
-
+    );
 }
 
-export default ShowStudentDetails
+export default ShowStudentDetails;

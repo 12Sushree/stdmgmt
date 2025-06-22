@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-import { useNavigate } from 'react-router-dom';
-import NavBar from './NavBar';
+import '../App.css';
 import Footer from './Footer';
 
-const AddStudent = (props) => {
+const AddStudent = () => {
 
   const navigate = useNavigate();
   const [student, setStudent] = useState({
@@ -19,7 +17,6 @@ const AddStudent = (props) => {
     dob: '',
     phno: '',
   });
-  const [showToast, setShowToast] = useState(false);
 
   const onChange = (e) => {
     setStudent({ ...student, [e.target.name]: e.target.value });
@@ -29,8 +26,8 @@ const AddStudent = (props) => {
     // Prevents the page from refreshing
     e.preventDefault()
 
-    axios.post('api/students',student)
-      .then((res) => {
+    axios.post('/api/students', student)
+      .then(() => {
         setStudent({
           name: '',
           id: '',
@@ -55,12 +52,10 @@ const AddStudent = (props) => {
 
         // Delay the navigation slightly to allow the toast to be seen
         setTimeout(() => {
-          setShowToast(false); // Hide the toast
           navigate('/student-list'); // Navigate to homepage
         },  5000); // Adjust the timeout as needed
 
       })
-
       .catch((err) => {
         console.log('Error in Adding Student!');
         console.log('The error is -> ')
@@ -82,7 +77,6 @@ const AddStudent = (props) => {
 
   return (
     <div className='AddStudent'>
-      <NavBar />
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -93,7 +87,7 @@ const AddStudent = (props) => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme="dark"
         transition={Slide}
       />
       <div className='container-fluid'>
@@ -124,7 +118,7 @@ const AddStudent = (props) => {
 
               <div className='form-group'>
                 <input
-                  type='number'
+                  type='text'
                   placeholder='Id of the Student'
                   name='id'
                   className='form-control ip'
@@ -148,7 +142,7 @@ const AddStudent = (props) => {
 
               <div className='form-group'>
                 <input
-                  type='number'
+                  type='text'
                   placeholder='Joining Year of the Student'
                   name='join_year'
                   className='form-control ip'
@@ -172,7 +166,7 @@ const AddStudent = (props) => {
 
               <div className='form-group'>
                 <input
-                  type='number'
+                  type='text'
                   placeholder='Phone No. of the Student'
                   name='phno'
                   className='form-control ip'

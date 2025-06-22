@@ -1,64 +1,79 @@
 const express = require("express");
 const Student = require("../../models/Student");
-// Handle all the route parameters with ease
 const router = express.Router();
 
+// Test route
+router.get('/test', (_req, res) => {
+    res.send("Test API route is working fine");
+});
 
-router.get('/test', (req, res) => {
-    res.send("Test API route is working fine")
-})
+// @route   GET api/students
+// @desc    Get all students
+// @access  Public
+router.get('/', async (_req, res) => {
+    try {
+        const students = await Student.find();
+        res.json(students);
+    } catch (err) {
+        res.status(500).json({ error: 'Server error while fetching students' });
+    }
+});
 
-// @router GET api/students
-// @description Give all student details
-// @access Public
-// READ operation
-router.get('/', (req, res) => {
-    Student.find()
-        .then((students) => res.json(students))
-        .catch((err) => res.status(404).json({ noStudentsFound: 'MongoDB could not found the Student details' }))
-})
+// @route   GET api/students/:id
+// @desc    Get a student by ID
+// @access  Public
+router.get('/:id', async (req, res) => {
+    try {
+        const student = await Student.findById(req.params.id);
+        if (!student) {
+            return res.status(404).json({ error: 'Student not found' });
+        }
+        res.json(student);
+    } catch (err) {
+        res.status(404).json({ error: 'Student not found' });
+    }
+});
 
-// @router GET api/students/:id
-// @description Give single student details by ID
-// @access Public
-// READ and SEARCH operation
-router.get('/:id', (req, res) => {
-    Student.findById(req.params.id)
-        .then((student) => res.json(student))
-        .catch((err) => res.status(404).json({ noStudentFound: 'MongoDB could not find the Student details' }))
-        // res.json({ OK: "Get Student by Id route is working fine"})
-})
+// @route   POST api/students
+// @desc    Add a new student
+// @access  Public
+router.post('/', async (req, res) => {
+    try {
+        const student = await Student.create(req.body);
+        res.json({ msg: 'Student added successfully', student });
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+});
 
-// @router GET api/students
-// @description Add new Student details
-// @access Public
-// CREATE operation
-router.post('/', (req, res) => {
-    Student.create(req.body)
-        .then((student) => res.json({ msg: 'Student added successfully'}))
-        .catch((err) => res.status(400).json({ error: 'Unable to add this Student' }))
-        // res.json({ OK: "Create Student route is working fine"})
-})
+// @route   PUT api/students/:id
+// @desc    Update a student by ID
+// @access  Public
+router.put('/:id', async (req, res) => {
+    try {
+        const student = await Student.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!student) {
+            return res.status(404).json({ error: 'Student not found' });
+        }
+        res.json({ msg: 'Student details updated successfully', student });
+    } catch (err) {
+        res.status(400).json({ error: 'Unable to update the Student details' });
+    }
+});
 
-// @router GET api/students/:id
-// @description Update Student details
-// @access Public
-// READ, UPDATE & SEARCH operation
-router.put('/:id', (req, res) => {
-    Student.findByIdAndUpdate(req.params.id, req.body)
-        .then((student) => res.json({ OK: 'Student details updated successfully'}))
-        .catch((err) => res.status(400).json({ error: 'Unable to update the Student details' }))
-        // res.json({ OK: "Update Student route is working fine"})
-})
-
-// @router GET api/students/:id
-// @description Delete Student details
-// @access Public
-// READ, DELETE & SEARCH operation
-router.delete('/:id', (req, res) => {
-    Student.findByIdAndDelete(req.params.id, req.body)
-      .then((student) => res.json({ mgs: 'Student entry deleted successfully' }))
-      .catch((err) => res.status(404).json({ error: 'No such a student' }));
+// @route   DELETE api/students/:id
+// @desc    Delete a student by ID
+// @access  Public
+router.delete('/:id', async (req, res) => {
+    try {
+        const student = await Student.findByIdAndDelete(req.params.id);
+        if (!student) {
+            return res.status(404).json({ error: 'Student not found' });
+        }
+        res.json({ msg: 'Student entry deleted successfully' });
+    } catch (err) {
+        res.status(404).json({ error: 'Student not found' });
+    }
 });
 
 module.exports = router;
