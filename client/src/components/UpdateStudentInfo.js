@@ -1,44 +1,46 @@
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const UpdateStudentInfo = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [student, setStudent] = useState({
-    name: '',
-    id: '',
-    honors: '',
-    join_year: '',
-    dob: '',
-    phno: ''
+    name: "",
+    id: "",
+    honors: "",
+    join_year: "",
+    dob: "",
+    phno: "",
   });
 
   useEffect(() => {
-    axios.get(`/api/students/${id}`)
-      .then(_res => {
-        const dob = _res.data.dob ? _res.data.dob.substring(0, 10) : '';
+    axios
+      .get(`/api/students/${id}`)
+      .then((_res) => {
+        const dob = _res.data.dob ? _res.data.dob.substring(0, 10) : "";
         setStudent({ ..._res.data, dob });
       })
-      .catch(_err => {
-        toast.error('Failed to fetch student data');
+      .catch((_err) => {
+        toast.error("Failed to fetch student data");
       });
   }, [id]);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setStudent({ ...student, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`/api/students/${id}`, student)
-      .then(_res => {
-        toast.success('Student updated successfully');
-        navigate('/student-list');
+    axios
+      .put(`https://stdmgmt.vercel.app/api/students/${id}`, student)
+      .then((_res) => {
+        toast.success("Student updated successfully");
+        navigate("/student-list");
       })
-      .catch(_err => {
-        toast.error('Failed to update student');
+      .catch((_err) => {
+        toast.error("Failed to update student");
       });
   };
 
@@ -115,7 +117,9 @@ const UpdateStudentInfo = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">Update</button>
+        <button type="submit" className="btn btn-primary">
+          Update
+        </button>
       </form>
     </div>
   );
